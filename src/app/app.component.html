@@ -1,5 +1,5 @@
 <div>
-  <app-header></app-header>
-  <app-recipe-book></app-recipe-book>
-  <app-shopping-list></app-shopping-list>
+  <app-header (sectionSelected)="handleSectionSelection($event)"></app-header>
+  <app-recipe-book *ngIf="selectedSection === 'recipes'"></app-recipe-book>
+  <app-shopping-list *ngIf="selectedSection === 'shoppingList'"></app-shopping-list>
 </div>

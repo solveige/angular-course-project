@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { HeaderSection } from '../shared/ingredient.model';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+@Output() sectionSelected = new EventEmitter<"shoppingList" | "recipes">();
 
+onSectionSelection(value: "shoppingList" | "recipes") {
+  this.sectionSelected.emit(value)
+}
 }
