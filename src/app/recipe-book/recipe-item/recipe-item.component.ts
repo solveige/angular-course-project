@@ -11,8 +11,4 @@ export class RecipeItemComponent {
 @Input() recipeItem: Recipe;
 
 constructor(private recipeService : RecipeService){}
-
-onRecipeItemSelection(value: Recipe) {
-this.recipeService.recipeSelected.emit(this.recipeItem)
-}
 }
