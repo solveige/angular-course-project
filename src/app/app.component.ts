@@ -7,10 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course-project';
-  selectedSection = 'recipes';
 
-  handleSectionSelection(value: "shoppingList" | "recipes") {
-    this.selectedSection = value;
-    console.log(value)
-  }
 }
