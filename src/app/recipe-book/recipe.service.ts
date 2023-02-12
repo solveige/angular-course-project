@@ -30,7 +30,6 @@ export class RecipeService {
 
 	constructor(private shoppingListService: ShoppingListService){}
 
-
 	addIngredientsToShoppingList(ingredients: Ingredient[]) {
 		this.shoppingListService.addIngredients(ingredients);
 	}
