@@ -1,0 +1,37 @@
+<p>Form</p>
+<form class='form' #testForm="ngForm" (ngSubmit)="onSubmit()">
+	<input 
+	type="email" 
+	name="email" 
+	ngModel
+	required
+	#email="ngModel"
+	>
+	<p *ngIf="!email.valid && email.touched">Enter valid email</p>
+<select name="subscription" [ngModel]="defaultSubscription" >
+	<option value="basic">Basic</option>
+	<option value="advanced">Advanced</option>
+	<option value="pro">Pro</option>
+</select>
+<input 
+type="text" 
+name="password" 
+ngModel 
+required
+#password="ngModel"
+>
+<p *ngIf="!password.valid && password.touched">Enter valid email</p>
+
+<button type="submit" [disabled]="!testForm.valid">Submit</button>
+</form>
+
+<form class="form" [formGroup]="projectForm" (ngSubmit)="onProjectFormSubmit()">
+	<input type="text" formControlName="projectName">
+	<input type="email" formControlName="email">
+	<select formControlName="projectStatus">
+		<option *ngFor="let item of projectStatuses" [value]="item">{{item}}</option>
+	</select>
+
+	<button type="submit">Submit</button>
+</form>
+
