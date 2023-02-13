@@ -10,19 +10,21 @@ export class RecipeService {
 
 	recipesChanged = new Subject<Recipe[]>();
 
-	private recipes: Recipe[] = [
-		new Recipe('Pizza', 
-		'Some description of pizza', 
-		'https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg',
-		 [new Ingredient('onion', 1)], '1'
-		 ),
-		new Recipe(
-			'Spicy Pizza', 
-			'Some description of spicy pizza', 
-			'https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg', 
-			[new Ingredient('orange', 1)], '2'
-			)
-	];
+	// private recipes: Recipe[] = [
+	// 	new Recipe('Pizza', 
+	// 	'Some description of pizza', 
+	// 	'https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg',
+	// 	 [new Ingredient('onion', 1)], '1'
+	// 	 ),
+	// 	new Recipe(
+	// 		'Spicy Pizza', 
+	// 		'Some description of spicy pizza', 
+	// 		'https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg', 
+	// 		[new Ingredient('orange', 1)], '2'
+	// 		)
+	// ];
+
+	private recipes: Recipe[] = [];
 
 	getRecipes() {
 		return this.recipes.slice();
@@ -56,6 +58,11 @@ export class RecipeService {
 
 		if(index === -1) return;
 		this.recipes.splice(index, 1)
+		this.recipesChanged.next(this.recipes.slice());
+	}
+
+	replaceRecipes(recipes: Recipe[]) {
+		this.recipes = recipes;
 		this.recipesChanged.next(this.recipes.slice());
 	}
 }

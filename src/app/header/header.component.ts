@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { HeaderSection } from '../shared/ingredient.model';
+import { Component} from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,14 @@ import { HeaderSection } from '../shared/ingredient.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-@Output() sectionSelected = new EventEmitter<"shoppingList" | "recipes">();
 
-onSectionSelection(value: "shoppingList" | "recipes") {
-  this.sectionSelected.emit(value)
+constructor(private dataStorageService: DataStorageService){}
+
+onSaveData() {
+  this.dataStorageService.storeRecipes();
+}
+
+onFetchData() {
+  this.dataStorageService.fetchRecipes();
 }
 }
