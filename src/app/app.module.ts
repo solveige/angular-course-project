@@ -18,6 +18,7 @@ import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.co
 import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipe-book/recipe.service';
 import { ReversePipe } from './reverse.pipe';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ReversePipe } from './reverse.pipe';
     RecipeStartComponent,
     RecipeEditComponent,
     ReversePipe,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
