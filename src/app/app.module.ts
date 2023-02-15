@@ -23,6 +23,7 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
     HeaderComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

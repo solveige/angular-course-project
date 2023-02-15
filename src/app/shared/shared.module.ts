@@ -8,12 +8,10 @@ import { LoadingSpinnerComponent } from "./loading-spinner/loadind-spinner";
 	declarations: [
 		DropdownDirective,
     ReversePipe,
-    AuthComponent,
     LoadingSpinnerComponent,],
 	exports: [
 		DropdownDirective,
     ReversePipe,
-    AuthComponent,
     LoadingSpinnerComponent]
 })
 export class SharedModule {}
