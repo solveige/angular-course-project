@@ -89,9 +89,9 @@ export class RecipeEditComponent implements OnInit {
       this.id || Math.random().toString(),
     )
     if (this.editMode) {
-      this.recipeService.updateRecipe(newRecipe)
+      this.recipeService.updateRecipe(newRecipe);
     } else {
-      this.recipeService.addRecipe(newRecipe)
+      this.recipeService.addRecipe(newRecipe);
     }
 
     this.onCancel();

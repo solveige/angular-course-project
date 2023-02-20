@@ -6,11 +6,11 @@ export class ShoppingListService {
 	startedEditing = new Subject<number>();
 
 	ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 10)
-  ]
+		new Ingredient('Apples', 5),
+		new Ingredient('Tomatoes', 10)
+	]
 
-	getIngredients(){
+	getIngredients() {
 		return this.ingredients.slice();
 	}
 
@@ -27,11 +27,11 @@ export class ShoppingListService {
 		this.ingredients[index] = newIngredient;
 		this.ingredientsChanged.next(this.ingredients.slice());
 	}
-	
-  handleIngredientAdd(item: Ingredient) {
-    this.ingredients.push(item);
+
+	handleIngredientAdd(item: Ingredient) {
+		this.ingredients.push(item);
 		this.ingredientsChanged.next(this.ingredients.slice());
-  }
+	}
 
 	addIngredients(ingredients: Ingredient[]) {
 		this.ingredients.push(...ingredients);

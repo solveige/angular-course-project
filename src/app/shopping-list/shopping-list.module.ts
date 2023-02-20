@@ -8,13 +8,13 @@ import { ShoppingListComponent } from "./shopping-list.component";
 @NgModule({
 	declarations: [
 		ShoppingListComponent,
-    ShoppingListEditComponent,
+		ShoppingListEditComponent,
 	],
 	imports: [
 		CommonModule,
-    FormsModule,
-		RouterModule.forChild([{path: 'shopping-list', component: ShoppingListComponent}]),
+		FormsModule,
+		RouterModule.forChild([{ path: 'shopping-list', component: ShoppingListComponent }]),
 	],
 	bootstrap: [ShoppingListComponent]
 })
-export class ShoppingListModule {}
+export class ShoppingListModule { }

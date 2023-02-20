@@ -26,8 +26,8 @@ import { RecipeService } from "./recipe.service";
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-		RecipeBookRoutingModule,
-		SharedModule,
+    RecipeBookRoutingModule,
+    SharedModule,
   ],
   bootstrap: [RecipeBookComponent]
 })
